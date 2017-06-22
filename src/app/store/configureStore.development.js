@@ -1,11 +1,12 @@
 import { createStore, applyMiddleware, compose } from "redux";
 import { persistState } from "redux-devtools";
-import promiseMiddleware from "redux-promise-middleware";
+import createSagaMiddleware from "redux-saga";
 
 import createLogger from "redux-logger";
 
 import rootReducer from "../reducer";
 import DevTools from "../DevTools";
+import sagas from "../sagas";
 
 /**
  * Entirely optional.
@@ -14,9 +15,9 @@ import DevTools from "../DevTools";
  * with your standard DevTools monitor gives you great flexibility.
  */
 const logger = createLogger();
-
+const sagaMiddleware = createSagaMiddleware();
 const middlewares = [
-  promiseMiddleware(),
+  sagaMiddleware,
   logger,
   require("redux-immutable-state-invariant")()
 ];
@@ -44,7 +45,7 @@ function configureStore(initialState) {
       store.replaceReducer(nextReducer);
     });
   }
-
+  sagaMiddleware.run(sagas);
   return store;
 }
 

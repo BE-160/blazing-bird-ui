@@ -1,10 +1,15 @@
 import { createStore, applyMiddleware, compose } from "redux";
-import promiseMiddleware from "redux-promise-middleware";
-
+import createSagaMiddleware from "redux-saga";
 import rootReducer from "../reducer";
+import sagas from "../sagas";
 
-const enhancer = compose(applyMiddleware(promiseMiddleware()))(createStore);
+const sagaMiddleware = createSagaMiddleware();
+const enhancer = compose(applyMiddleware(sagaMiddleware))(createStore);
 
-export default function configureStore(initialState) {
-  return enhancer(rootReducer, initialState);
-}
+const store = function configureStore(initialState) {
+  const st = enhancer(rootReducer, initialState);
+  sagaMiddleware.run(sagas);
+  return st;
+};
+
+export default store;
