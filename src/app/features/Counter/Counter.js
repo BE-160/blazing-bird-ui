@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import Button from "app/components/button";
+import Button from "app/components/Button";
 
 export const Counter = ({ counter, increment }) => (
   <div style={{ margin: "0 auto" }}>
