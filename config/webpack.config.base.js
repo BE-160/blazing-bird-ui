@@ -5,6 +5,8 @@ const webpack = require("webpack");
 //const autoprefixer = require("autoprefixer");
 var HtmlWebpackPlugin = require("html-webpack-plugin");
 const config = require("config");
+var StyleLintPlugin = require("stylelint-webpack-plugin");
+
 module.exports = {
   output: {
     filename: "js/[name].[hash].js",
@@ -23,6 +25,7 @@ module.exports = {
     extensions: [".js", ".jsx", ".json", ".scss"]
   },
   plugins: [
+    new StyleLintPlugin(),
     new webpack.ProvidePlugin({
       fetch: "imports-loader?this=>global!exports-loader?global.fetch!whatwg-fetch" // fetch API
     }),

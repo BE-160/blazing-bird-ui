@@ -1,19 +1,9 @@
-import fetch from "app/utils/fetch";
 // ------------------------------------
 // Constants
 // ------------------------------------
 export const TIMER = "TIME";
 
-function fetchTime() {
-  return fetch(`/posts`).then((json) => json);
-}
-
 // action creator
 export const loadTime = () => ({
-  type: TIMER,
-  payload: fetchTime()
+  type: "DATA_FETCH_REQUESTED"
 });
-
-export const actions = {
-  loadTime
-};

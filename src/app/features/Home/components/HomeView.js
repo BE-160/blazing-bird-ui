@@ -19,7 +19,7 @@ export const HomeView = ({ loadTime, status, time }) => (
 HomeView.propTypes = {
   loadTime: PropTypes.func,
   status: PropTypes.string,
-  time: PropTypes.string
+  time: PropTypes.array
 };
 
 export default HomeView;
