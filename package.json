@@ -112,6 +112,7 @@
     "react-router-dom": "^4.1.1",
     "react-snapshot": "^1.1.0",
     "redux": "3.5.2",
+    "redux-json-router": "1.0.0",
     "redux-logger": "2.6.1",
     "redux-promise-middleware": "^4.3.0",
     "reselect": "2.5.3"

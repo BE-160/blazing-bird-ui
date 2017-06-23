@@ -1,0 +1,21 @@
+[
+  {
+    "path": "/",
+    "page": "./testjsonrouter/Home",
+    "chunk": "main"
+  },
+  {
+    "path": "/docs",
+    "page": "./testjsonrouter/Docs",
+    "children": [
+      {
+        "path": "/:id",
+        "page": "./testjsonrouter/Post"
+      }
+    ]
+  },
+  {
+    "path": "*",
+    "page": "./testjsonrouter/Error"
+  }
+]

@@ -44,7 +44,7 @@ app.get("*", function(req, res) {
   });
 });
 
-app.listen(port, host, (err) => {
+app.listen(port, (err) => {
   if (err) {
     log(err);
     return;

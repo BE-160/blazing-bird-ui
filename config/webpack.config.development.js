@@ -1,6 +1,7 @@
 const merge = require("webpack-merge");
 const webpack = require("webpack");
 const config = require("./webpack.config.base");
+const path = require('path');
 
 const GLOBALS = {
   "process.env": {
@@ -8,6 +9,8 @@ const GLOBALS = {
   },
   __DEV__: JSON.stringify(JSON.parse(process.env.DEBUG || "true"))
 };
+
+const routes = [path.resolve(__dirname, './../src/app/routes.json')]; 
 
 module.exports = merge(config, {
   cache: true,
@@ -21,7 +24,7 @@ module.exports = merge(config, {
       "react-hot-loader/patch",
       "development"
     ],
-    vendor: ["react", "react-dom", "react-redux", "react-router", "redux"]
+    vendor: ["react", "react-dom", "react-redux", "redux"]
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
@@ -65,6 +68,20 @@ module.exports = merge(config, {
           }
         ]
       },
+      {
+          test: /\.json$/,
+          exclude: routes, // exclude routes.json from being loaded by the usual json-loader
+          loader: 'json-loader',
+        },
+        {
+            test: /\.json$/,
+            include: routes, // load routes.json with route-loader instead
+            loader: 'redux-json-router/lib/route-loader',
+            options: {
+              // debug (boolean) - defaults to false
+              // chunks (boolean) - defaults to true
+            },
+          },
       {
         test: /\.css$/,
         use: ["style-loader", "css-loader", "postcss-loader"]
