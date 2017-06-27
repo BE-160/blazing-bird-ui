@@ -1,11 +1,8 @@
 @import "~bootstrap/dist/css/bootstrap.css";
-
-@font-face
-{
+@font-face {
   font-family: Roboto;
   src: url('../assets/fonts/Roboto/Roboto-Light.ttf');
 }
-
 
 body {
   font-family: 'Roboto';
@@ -13,6 +10,17 @@ body {
   padding-top: 30px;
 }
 
-.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6{
-   font-family: 'Roboto';
-}
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Roboto';
+} 
