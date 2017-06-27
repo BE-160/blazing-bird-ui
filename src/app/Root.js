@@ -4,7 +4,6 @@ import React, { PropTypes } from "react";
 import { Provider } from "react-redux";
 
 import Routes from "./routes";
-import { SENTRY_URL } from "./config";
 
 // If you use React Router, make this component
 // render <Router> with your routes. Currently,
@@ -12,8 +11,6 @@ import { SENTRY_URL } from "./config";
 // you will see a warning from <Router> on every reload.
 // You can ignore this warning. For details, see:
 // https://github.com/reactjs/react-router/issues/2182
-
-window.Raven && window.Raven.config(SENTRY_URL).install();
 
 const Root = ({ store }) => {
   let ComponentEl = (

@@ -1,13 +1,22 @@
 import { createStore, applyMiddleware, compose } from "redux";
-import promiseMiddleware from "redux-promise-middleware";
+
 import { routerMiddleware } from "redux-json-router";
 
+import createSagaMiddleware from "redux-saga";
+
 import rootReducer from "../reducer";
+import sagas from "../sagas";
 
-export default function configureStore(history, initialState) {
-  const enhancer = compose(
-    applyMiddleware(routerMiddleware(history), promiseMiddleware())
-  )(createStore);
+const sagaMiddleware = createSagaMiddleware();
 
-  return enhancer(rootReducer, initialState);
+function configureStore(history, initialState) {
+  const middlewares = [routerMiddleware(history), sagaMiddleware];
+
+  const enhancer = compose(applyMiddleware(...middlewares))(createStore);
+
+  const store = enhancer(rootReducer, initialState);
+  sagaMiddleware.run(sagas);
+  return store;
 }
+
+export default configureStore;
