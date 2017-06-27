@@ -105,7 +105,6 @@
     "esdoc": "^0.5.2",
     "isomorphic-fetch": "^2.2.1",
     "lodash": "4.15.0",
-    "raven-js": "3.6.1",
     "react": "15.4.0",
     "react-dom": "15.4.0",
     "react-helmet": "^5.1.3",

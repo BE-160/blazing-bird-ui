@@ -9,7 +9,7 @@ function fetchPost(url) {
 function* fetchUser() {
   try {
     yield put({ type: "TIME_PENDING", user: user });
-    const user = yield call(fetchPost, "/posts");
+    const user = yield call(fetchPost, "/postss");
     yield put({ type: "TIME_FULFILLED", payload: user });
   } catch (e) {
     yield put({ type: "TIME_REJECTED", message: e.message });

@@ -6169,12 +6169,6 @@ range-parser@^1.0.3, range-parser@~1.2.0:
   version "1.2.0"
   resolved "https://registry.npmjs.org/range-parser/-/range-parser-1.2.0.tgz#f49be6b487894ddc40dcc94a322f611092e00d5e"
 
-raven-js@3.6.1:
-  version "3.6.1"
-  resolved "https://registry.npmjs.org/raven-js/-/raven-js-3.6.1.tgz#f309d3d2860b897a3017380982ae04ad1bdc8e45"
-  dependencies:
-    json-stringify-safe "^5.0.1"
-
 rc@^1.1.7:
   version "1.2.1"
   resolved "https://registry.npmjs.org/rc/-/rc-1.2.1.tgz#2e03e8e42ee450b8cb3dce65be1bf8974e1dfd95"
