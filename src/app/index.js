@@ -1,5 +1,5 @@
 import React from "react";
-import { render } from "react-dom";
+import { render } from "react-snapshot";
 import { AppContainer } from "react-hot-loader";
 import { createBrowserHistory, startListener } from "redux-json-router";
 import Redbox from "redbox-react";

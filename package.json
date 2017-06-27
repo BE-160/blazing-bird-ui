@@ -32,7 +32,7 @@
     "webpack": "webpack --config config/webpack.config.development",
     "prebuild": "npm run clean:build",
     "build": "cross-env NODE_ENV=production webpack --config ./config/webpack.config.production.js --progress",
-    "postbuilds": "react-snapshot",
+    "postbuild": "react-snapshot",
     "build:serve": "http-server build -p 3003 --cors -o",
     "lint": "eslint src/**/*.js",
     "test": "jest",
