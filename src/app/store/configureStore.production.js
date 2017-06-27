@@ -1,10 +1,13 @@
 import { createStore, applyMiddleware, compose } from "redux";
 import promiseMiddleware from "redux-promise-middleware";
+import { routerMiddleware } from "redux-json-router";
 
 import rootReducer from "../reducer";
 
-const enhancer = compose(applyMiddleware(promiseMiddleware()))(createStore);
+export default function configureStore(history, initialState) {
+  const enhancer = compose(
+    applyMiddleware(routerMiddleware(history), promiseMiddleware())
+  )(createStore);
 
-export default function configureStore(initialState) {
   return enhancer(rootReducer, initialState);
 }

@@ -11,7 +11,7 @@ class Bundle extends Component {
   }
 
   componentWillMount() {
-    this.load(this.props);
+    // this.load(this.props);
   }
 
   componentWillReceiveProps(nextProps) {
