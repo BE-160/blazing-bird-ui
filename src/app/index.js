@@ -1,19 +1,18 @@
 import React from "react";
 import { render } from "react-snapshot";
 import { AppContainer } from "react-hot-loader";
-import { createBrowserHistory, startListener } from "redux-json-router";
+import createHistory from "history/createBrowserHistory";
 import Redbox from "redbox-react";
 import Root from "./Root";
 import configureStore from "./store/configureStore";
 
 // create a history singletonx
-const history = createBrowserHistory();
+const history = createHistory();
 
 // configure store with history
 const store = configureStore(history);
 
 // dispatch actions when the history is manually changed (with navigation buttons / address bar)
-startListener(history, store);
 
 // Get the DOM Element that will host our React application
 const rootEl = document.getElementById("app");

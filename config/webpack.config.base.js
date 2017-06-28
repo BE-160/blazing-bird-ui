@@ -6,7 +6,6 @@ const webpack = require("webpack");
 var HtmlWebpackPlugin = require("html-webpack-plugin");
 const config = require("config");
 var StyleLintPlugin = require("stylelint-webpack-plugin");
-const routes = [path.resolve(__dirname, "./../src/app/routes.json")];
 
 module.exports = {
   output: {
@@ -83,20 +82,6 @@ module.exports = {
             limit: 8192,
             name: "fonts/[name].[ext]?[hash]"
           }
-        }
-      },
-      {
-        test: /\.json$/,
-        exclude: routes, // exclude routes.json from being loaded by the usual json-loader
-        loader: "json-loader"
-      },
-      {
-        test: /\.json$/,
-        include: routes, // load routes.json with route-loader instead
-        loader: "redux-json-router/lib/route-loader",
-        options: {
-          // debug (boolean) - defaults to false
-          // chunks (boolean) - defaults to true
         }
       }
     ]

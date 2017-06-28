@@ -1,6 +1,6 @@
 import { createStore, applyMiddleware, compose } from "redux";
 
-import { routerMiddleware } from "redux-json-router";
+import { routerMiddleware } from "react-router-redux";
 
 import createSagaMiddleware from "redux-saga";
 

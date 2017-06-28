@@ -12,10 +12,10 @@ import Routes from "./routes";
 // You can ignore this warning. For details, see:
 // https://github.com/reactjs/react-router/issues/2182
 
-const Root = ({ store }) => {
+const Root = ({ store, history }) => {
   let ComponentEl = (
     <Provider store={store}>
-      <Routes />
+      <Routes history={history} />
     </Provider>
   );
 
@@ -25,7 +25,7 @@ const Root = ({ store }) => {
     ComponentEl = (
       <Provider store={store}>
         <div>
-          <Routes />
+          <Routes history={history} />
           {!window.devToolsExtension ? <DevTools /> : null}
         </div>
       </Provider>
