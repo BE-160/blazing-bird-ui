@@ -1,18 +1,23 @@
 [
   {
     "path": "/",
-    "page": "./testjsonrouter/Home",
+    "page": "./features/testjsonrouter/Home",
     "chunk": "main"
   },
   {
     "path": "/docs",
-    "page": "./testjsonrouter/Docs",
+    "page": "./features/testjsonrouter/Docs",
     "children": [
       {
         "path": "/:id",
-        "page": "./testjsonrouter/Post"
+        "page": "./features/testjsonrouter/Post"
       }
     ]
+  },
+  {
+    "path": "/counter",
+    "page": "./features/Counter",
+    "chunk": "main"
   },
   {
     "path": "*",

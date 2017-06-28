@@ -1,3 +1,3 @@
 import CounterView from "./CounterContainer";
 
-export { CounterView };
+export default CounterView;

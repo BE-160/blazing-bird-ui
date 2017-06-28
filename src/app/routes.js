@@ -7,9 +7,10 @@ import routes from "./routes.json";
 const Routes = () => (
   <div>
     <Link to="/">Home</Link><br />
-    <Link to="/docs">Post</Link><br />
-    <Link to="/docs/1">Post child</Link><br />
-    <Link to="/sdfsd">Error</Link>
+    <Link to="/docs">Docs</Link><br />
+    <Link to="/docs/1">Post Child</Link><br />
+    <Link to="/sdfsd">Error</Link><br />
+    <Link to="/counter">Counter</Link>
     <Router routes={routes} />
   </div>
 );
