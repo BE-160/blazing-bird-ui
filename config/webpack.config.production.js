@@ -17,13 +17,7 @@ module.exports = merge(config, {
   devtool: "cheap-module-source-map",
   entry: {
     application: "production",
-    vendor: [
-      "react",
-      "react-dom",
-      "react-redux",
-      "react-router-reduxr",
-      "redux"
-    ]
+    vendor: ["react", "react-dom", "react-redux", "react-router-redux", "redux"]
   },
   plugins: [
     new CopyWebpackPlugin([
