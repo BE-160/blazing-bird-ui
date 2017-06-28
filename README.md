@@ -1,55 +1,45 @@
-# React + Redux w/ ES6 Starter Project
+# Blazing Bird
 
-**:tada: A Completely updated version of my initial boilerplate :rocket:**
+**This repo respresents the SPA based react app for Birdeye**
 
-*Note: If you still want to use a previous version, please checkout `old-original-structure` branch.*
-
-A boilerplate using the power and simplicity of React, Redux, Webpack 2 + HMR, and ES6 + JSX via Babel. Includes `Webpack's Tree Shaking` configuration. It's suitable for scalable applications and organized using the custom variation of [the Ducks pattern](https://github.com/nicksp/ducks-modular-redux) — approach when each module's entry file (`feature-name.js`) contains all of its related constants, actions/action creators, selectors and its reducer.
-
-The provided boilerplate is powered by the following technology stack:
+The project is powered by the following technology stack:
 
 - [x] [React](https://facebook.github.io/react/) and [JSX](https://facebook.github.io/jsx/) — a virtual DOM JavaScript library for rendering UI.  It's about rendering view as a function of state, making JavaScript-driven UI declarative the way HTML is declarative.
 - [x] [Redux](http://redux.js.org/) — an incredibly simple way of modelling your data app state, with great community support
-- [x] [Webpack 2](https://gist.github.com/sokra/27b24881210b56bbaff7) and [dev middleware](https://github.com/webpack/webpack-dev-middleware) — client-side module builder and module loader
+- [x] [Webpack 3](https://gist.github.com/sokra/27b24881210b56bbaff7) and [dev middleware](https://github.com/webpack/webpack-dev-middleware) — client-side module builder and module loader
 - [x] [React Hot Loader 3](https://github.com/gaearon/react-hot-boilerplate/pull/61) — combines the best of React Hot Loader and React Transform and fixes some [long-standing issues](https://twitter.com/dan_abramov/status/722040946075045888)
-- [ ] [React Router v3](https://github.com/reactjs/react-router/blob/next/CHANGES.md) — to allow [dynamic routing](https://github.com/reactjs/react-router/blob/master/docs/guides/DynamicRouting.md)
+- [ ] [React JSON Router](https://www.npmjs.com/package/redux-json-router) — to allow [dynamic routing](https://github.com/reactjs/react-router/blob/master/docs/guides/DynamicRouting.md). Redux-json-router is a minimal router intended for use with client-rendered React/Redux applications.
 - [x] [React Router Redux](https://github.com/reactjs/react-router-redux) — simple bindings to keep React Router and Redux in sync
 - [x] [Reselect](https://github.com/reactjs/reselect) — provides a way to access Redux state in components and build composable selectors that are automatically memoized
-- [x] [Flow](https://flowtype.org/docs/getting-started.html) — static type checker for JavaScript aimed at catching common bugs in JavaScript programs. The flow type annotations get ripped out of the source by the webpack build step. You have no obligation to use flow within your code and can even uninstall the dependency (`flow-bin`) without breaking the project.
-- [x] [npm](https://www.npmjs.com/) — package manager and task runner
 - [x] [Babel 6](http://babeljs.io/) — transpiler from ES6 / JSX to ES5
 - [x] [PostCSS](http://postcss.org/) — ecosystem of custom plugins and tools aimed at transforming extended syntaxes and features into modern, browser-friendly CSS
 - [x] [CSS Modules](https://github.com/css-modules/css-modules) — guarantee that all the styles for a single component, designed to fix the problem of the global scope in CSS
 - [x] [Redux DevTools](https://github.com/gaearon/redux-devtools) — a live-editing environment for your Redux apps (and as a [browser extension](https://github.com/zalmoxisus/redux-devtools-extension))
-- [x] [webpack-dashboard](https://github.com/FormidableLabs/webpack-dashboard) — CLI dashboard for your Webpack dev server
-- [ ] [React Intl](https://github.com/yahoo/react-intl) — internationalization for React projects
+- [x] [React Intl](https://github.com/yahoo/react-intl) — internationalization for React projects
 - [x] [ESLint](http://eslint.org/docs/user-guide/configuring) — reporter for syntax and style issues
-- [x] [eslint-plugin-react](https://github.com/yannickcr/eslint-plugin-react) & [eslint-plugin-flowtype](https://github.com/gajus/eslint-plugin-flowtype) — additional React/Flow type specific linting rules for ESLint
+- [x] [eslint-plugin-react](https://github.com/yannickcr/eslint-plugin-react)  — additional React type specific linting rules for ESLint
 - [x] [Sass](http://sass-lang.com/) — compiler of CSS styles with variables, mixins, and more
-- [x] [Mocha](https://mochajs.org/) — well-known and flexible test framework that you can use to run your JavaScript tests on the server or in the browser
-- [ ] [Enzyme](http://airbnb.io/enzyme/) — makes unit testing React components an absolute pleasure
-- [x] [Chai](http://chaijs.com/) — BDD assertion library that works along with `Mocha`
-- [x] [Sentry](https://sentry.io/) — real-time error tracking for your app
+- [x] [Enzyme](http://airbnb.io/enzyme/) — makes unit testing React components an absolute pleasure
+- [x] [React helmet](https://github.com/nfl/react-helmet) Helmet takes plain HTML tags and outputs plain HTML tags. It's dead simple, and React beginner friendly.
+- [x] [React Snapshot](https://www.npmjs.com/package/react-snapshot) A zero-configuration static pre-renderer for React apps
+- [x] [StoryBook](http://storybook.js.org/) Interactive development & testing environment for React and React-Native UI components https://storybook.js.org
+- [x] [Redux Saga](https://github.com/redux-saga/redux-saga) for  asynchronous things like data fetching and impure things like accessing the browser cache
+- [x] [Jest](https://github.com/facebook/jest) Delightful JavaScript Testing. [http://facebook.github.io/jest/](http://facebook.github.io/jest/)
 
 ## Getting Started
 
 ### Prerequisites
 
-Support for Node.js > 5
+* Node.js > 5
+* yarn "`npm install -g yarn`"
 
 ### Installation
 
 ```sh
-$ git clone https://github.com/nicksp/redux-webpack-es6-boilerplate.git app-name
-$ cd app-name
+$ git clone https://github.com/BE-160/blazing-bird-ui
+$ cd blazing-bird-ui
 $ npm install
 ```
-
-### White Label It
-
-- Update name, description, author, repository in `package.json`
-- Update app title in [`src/client/assets/index.html`](src/client/assets/index.html)
-
 
 ## Development
 
@@ -65,9 +55,54 @@ There are two ways in which you can build and run the web app:
   * `$ npm start`
   * Point your browser to http://localhost:3000/, page hot reloads automatically when there are changes
 
-## Testing
+## Coding Guidelines
 
-**(TBD)**
+```
+// widgets.js
+
+// Actions
+const LOAD   = 'my-app/widgets/LOAD';
+const CREATE = 'my-app/widgets/CREATE';
+const UPDATE = 'my-app/widgets/UPDATE';
+const REMOVE = 'my-app/widgets/REMOVE';
+
+// Reducer
+export default function reducer(state = {}, action = {}) {
+  switch (action.type) {
+    // do reducer stuff
+    default: return state;
+  }
+}
+
+// Action Creators
+export function loadWidgets() {
+  return { type: LOAD };
+}
+
+export function createWidget(widget) {
+  return { type: CREATE, widget };
+}
+
+export function updateWidget(widget) {
+  return { type: UPDATE, widget };
+}
+
+export function removeWidget(widget) {
+  return { type: REMOVE, widget };
+}
+```
+
+### Rules
+
+A module...
+
+* MUST export default a function called reducer()
+* MUST export its action creators as functions
+* MUST have action types in the form npm-module-or-app/reducer/ACTION_TYPE
+* MAY export its action types as UPPER_SNAKE_CASE, if an external reducer needs to listen for them, or if it is a published reusable library
+* These same guidelines are recommended for {actionType, action, reducer} bundles that are shared as reusable Redux libraries.
+
+## Testing
 
 To execute all unit tests, use:
 
@@ -93,16 +128,6 @@ $ npm run tunnel # run in a new tab
 
 You will receive a url, for example `https://tbst.localtunnel.me`, that you can share with anyone for as long as your local instance of `lt` remains active. Any requests will be routed to your local service at the specified port.
 
-## Error Tracking and Insights with Sentry
-
-In order to get info on errors that happened in production, we integrate [Sentry](https://sentry.io/for/javascript/) into our application to track errors and get context on what happened.
-
-To use it on your side, configure it first:
-
-* Create account at [https://sentry.io/signup/](https://sentry.io/signup/)
-* Add new project for your app on Sentry website
-* In `/src/client/assets/javascripts/app/config.js` file assign `SENTRY_KEY` and `SENTRY_APP` constants values that you got after adding a new project
-* Don't forget to define `Allowed Domains` section under your `Project Settings` on Sentry website to track errors from required domains
 
 ## Debugging
 
@@ -148,22 +173,3 @@ When you run `npm run build`:
 - Sets NODE_ENV to `production` so that React is built in production mode
 - Places the resulting built project files into `/build` directory. (This is the folder you'll expose to the world).
 
-## TODO
-
-- [ ] Watch `index.html` for changes
-- [ ] Setup test environment for React components using Enzyme, Mocha and Karma
-- [ ] Add support for React Intl
-- [ ] Add support for dynamic routing (`code splitting`)
-- [ ] Update `FAQ` section to reflect latest greatest changes
-- [ ] Add more Flow type annotations incrementally to allow Flow to validate more code, and gradually increase Flow’s coverage of the codebase
-- [ ] Integrate Material Design or Bootstrap
-- [ ] Check if PostCSS integration works
-- [ ] Apply more best practices to how code is organized and written
-- [ ] Add section about available `npm` scripts
-- [ ] Any more ideas?
-
-## License
-
-[MIT License](https://nicksp.mit-license.org/), 2016
-
-Brought to you by Nick S. Plekhanov
