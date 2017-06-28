@@ -21,6 +21,6 @@
   },
   {
     "path": "*",
-    "page": "./testjsonrouter/Error"
+    "page": "./features/testjsonrouter/Error"
   }
 ]
