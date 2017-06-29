@@ -26,9 +26,7 @@ module.exports = {
   },
   plugins: [
     new StyleLintPlugin(),
-    new webpack.ProvidePlugin({
-      fetch: "imports-loader?this=>global!exports-loader?global.fetch!whatwg-fetch" // fetch API
-    }),
+    new webpack.ProvidePlugin({}),
     // Shared code
     new webpack.optimize.CommonsChunkPlugin({
       name: "vendor",

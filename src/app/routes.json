@@ -1,7 +1,7 @@
 [
   {
     "path": "/",
-    "page": "./features/testjsonrouter/Home",
+    "page": "./features/Home",
     "chunk": "main"
   },
   {
