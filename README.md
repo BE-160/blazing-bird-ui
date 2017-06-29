@@ -173,3 +173,9 @@ When you run `npm run build`:
 - Sets NODE_ENV to `production` so that React is built in production mode
 - Places the resulting built project files into `/build` directory. (This is the folder you'll expose to the world).
 
+## TODO
+
+1. Browser caching
+2. Service worker
+3. DNS Prefetch
+
